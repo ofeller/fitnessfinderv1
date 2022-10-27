@@ -5,6 +5,7 @@ import { useRoute } from '@react-navigation/native';
 import { useNavigation } from '@react-navigation/native';
 import { StyleSheet, Text, Alert, TouchableOpacity, Button, TextInput, View } from 'react-native';
 
+
 const Circle = (props: any) => {
     const size =  50;
     const style = {
@@ -18,7 +19,39 @@ const Circle = (props: any) => {
     return <View style={style} />;
 }
 
+
+
 function UserProfile(){
+    const navigation = useNavigation(); 
+
+
+    const requestSent = () => {
+        Alert.alert(
+          "Request sent!",
+          "Username: olivia11 \nName: Olivia F.",
+          [
+            { text: "OK", onPress: () => navigation.navigate('HomeScreen') }
+          ]
+        ); 
+        //
+       
+      }
+
+
+    const onFriendRequest = () => {
+        Alert.alert(
+          "Send friend request?",
+          "Username: olivia11 \nName: Olivia F.",
+          [
+            { text: "Cancel", style: "cancel" },
+            { text: "OK", onPress: () => requestSent()}
+          ]
+        ); 
+        //
+       
+      }
+
+
     return(
     <View>
     <View style = {{padding: 5}}>
@@ -34,7 +67,7 @@ function UserProfile(){
     </View>
     
     <View style = {{padding: 5}}>
-    <TouchableOpacity style={{ backgroundColor: '#489fb5', borderRadius: 10, paddingVertical: 5}}>
+    <TouchableOpacity style={{ backgroundColor: '#489fb5', borderRadius: 10, paddingVertical: 5}} >
         <View style = {{flexDirection: 'row'}}>
             <View style ={{paddingLeft: 5}}><Circle></Circle></View>
             <View style = {{flexDirection: 'column', paddingTop:8, flex:0, paddingRight: 20 }}>
@@ -46,7 +79,7 @@ function UserProfile(){
     </View>
 
     <View style = {{padding: 5}}>
-    <TouchableOpacity style={{ backgroundColor: '#489fb5', borderRadius: 10, paddingVertical: 5}}>
+    <TouchableOpacity style={{ backgroundColor: '#489fb5', borderRadius: 10, paddingVertical: 5}} onPress={ () => onFriendRequest() }>
         <View style = {{flexDirection: 'row'}}>
             <View style ={{paddingLeft: 5}}><Circle></Circle></View>
             <View style = {{flexDirection: 'column', paddingTop:8, flex:0, paddingRight: 20 }}>
