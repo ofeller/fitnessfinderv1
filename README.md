@@ -1,11 +1,13 @@
 # fitnessfinderv1
 
-Download the Expo Go app for your mobile device
+Install Node, React, and React Native
 
-Install Node.js
+Install Expo CLI globaly by running the command npm i -g expo cli
 
-In a terminal in your IDE run the command "npx expo start"
+Install Expo Go on your phone so you can run the app in a physical device
 
-Scan the QR code generated in the terminal
+In a terminal in your code editor run the command "npx expo start"
 
-This should open our interface in the Expo Go app
+Scan the generated QR code
+
+This should open our interface in the Expo Go app on your mobile device
